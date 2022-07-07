@@ -1,5 +1,5 @@
 {% set name = "napari-sdeconv" %}
-{% set version = "0.1.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-sdeconv-{{ version }}.tar.gz
-  sha256: 199b36135065fe0c8cf5c1cf7987c6ab28f392901617a0608de70ffdeff050e8
+  sha256: 0aaccf46d88d1ebc264eabb4d935c5b9d14356f0c398d53bfa24c4c0e733cc33
 
 build:
   noarch: python
