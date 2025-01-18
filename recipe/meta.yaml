@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-sdeconv-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari-sdeconv-{{ version }}.tar.gz
   sha256: 199b36135065fe0c8cf5c1cf7987c6ab28f392901617a0608de70ffdeff050e8
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python {{ python_min }}
   run:
     - napari
     - napari-plugin-engine >=0.1.4
     - numpy
-    - python >=3.9
+    - python >={{ python_min }}
     - sdeconv >=0.1.0
 
 test:
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/sylvainprigent/napari-sdeconv
